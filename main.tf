@@ -6,3 +6,8 @@ module "datastore" {
   project         = var.project
   uris            = var.uris
 }
+
+module "mcp_server_sa" {
+  source          = "./modules/mcp_server_sa"
+  project         = var.project
+}
