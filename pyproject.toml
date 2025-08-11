@@ -1,7 +1,7 @@
 [project]
 name = "agentic-apigee-infra"
 version = "0.1.0"
-description = "Add your description here"
+description = "This project generates all the infrastructure resources required for Agentic Apigee"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
