@@ -11,3 +11,8 @@ module "mcp_server_sa" {
   source          = "./modules/mcp_server_sa"
   project         = var.project
 }
+
+module "apigee_agents_sa" {
+  source          = "./modules/apigee_agents_sa"
+  project         = var.project
+}
