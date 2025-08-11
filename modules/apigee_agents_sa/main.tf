@@ -8,7 +8,9 @@ provider "google" {
 locals {
   apigee_agents_roles = [
     "roles/aiplatform.user",
-    "roles/discoveryengine.user"
+    "roles/discoveryengine.user",
+    "roles/cloudsql.client",
+    "roles/secretmanager.secretAccessor"
   ]
   apigee_agents_deploy_roles = [
     "roles/storage.objectViewer",
