@@ -15,7 +15,7 @@ resource "google_cloud_run_v2_service" "mcp_server" {
   location            = var.location
   deletion_protection = false
   ingress             = "INGRESS_TRAFFIC_ALL"
-  launch_stage        = "BETA"
+  launch_stage        = "GA"
 
   template {
     service_account = var.mcp_server_sa_email
