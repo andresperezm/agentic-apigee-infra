@@ -1,18 +1,14 @@
 # Configure the Google Cloud provider
 provider "google" {
-  project = var.project
+  project               = var.project
   user_project_override = true
-}
-
-resource "google_project_service" "discoveryengine" {
-  service = "discoveryengine.googleapis.com"
 }
 
 # Create a Discovery Engine data store
 resource "google_discovery_engine_data_store" "website_data_store" {
   location          = var.location
-  data_store_id     = "apigee-knowledge-datastore"
-  display_name      = "apigee-knowledge-datastore"
+  data_store_id     = var.datastore_name
+  display_name      = var.datastore_name
   industry_vertical = "GENERIC"
   content_config    = "PUBLIC_WEBSITE"
   solution_types    = ["SOLUTION_TYPE_SEARCH"]

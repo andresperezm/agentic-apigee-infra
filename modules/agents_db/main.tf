@@ -1,6 +1,6 @@
 # Configure the Google Cloud provider
 provider "google" {
-  project = var.project
+  project               = var.project
   user_project_override = true
 }
 

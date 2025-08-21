@@ -1,9 +1,9 @@
 variable "project" {
-  type = string
+  type        = string
   description = "Google Cloud project"
 }
 
 variable "location" {
-  type = string
+  type        = string
   description = "location of the datastore"
 }

@@ -1,15 +1,21 @@
 variable "project" {
-  type = string
+  type        = string
   description = "Google Cloud project"
 }
 
 variable "uris" {
-  type = set(string)
+  type        = set(string)
   description = "List of sites to index on the datastore"
 }
 
-variable "db_location" {
-  type = string
-  default = "us-east1"
+variable "location" {
+  type        = string
+  default     = "us-east1"
   description = "List of sites to index on the datastore"
+}
+
+variable "agent_accessors" {
+  type        = list(string)
+  default     = []
+  description = "List od strings allowed to access the Apigee Agents"
 }
