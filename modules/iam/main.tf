@@ -14,8 +14,7 @@ locals {
   apigee_agents_roles = [
     "roles/aiplatform.user",
     "roles/discoveryengine.user",
-    "roles/cloudsql.client",
-    "roles/secretmanager.secretAccessor"
+    "roles/cloudsql.client"
   ]
   mcp_server_roles = [
     "roles/apigee.admin"

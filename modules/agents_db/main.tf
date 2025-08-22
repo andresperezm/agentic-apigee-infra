@@ -53,6 +53,12 @@ resource "google_secret_manager_secret" "db_name_secret" {
   }
 }
 
+resource "google_secret_manager_secret_iam_member" "agents_sa_db_name_secret_reader" {
+  secret_id = google_secret_manager_secret.db_name_secret.secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${var.agents_sa_email}"
+}
+
 resource "google_secret_manager_secret" "db_user_secret" {
   secret_id = "apigee_agents_db_user"
   replication {
@@ -60,11 +66,23 @@ resource "google_secret_manager_secret" "db_user_secret" {
   }
 }
 
+resource "google_secret_manager_secret_iam_member" "agents_sa_db_user_secret_reader" {
+  secret_id = google_secret_manager_secret.db_user_secret.secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${var.agents_sa_email}"
+}
+
 resource "google_secret_manager_secret" "db_password_secret" {
   secret_id = "apigee_agents_db_password"
   replication {
     auto {}
   }
+}
+
+resource "google_secret_manager_secret_iam_member" "agents_sa_db_pass_secret_reader" {
+  secret_id = google_secret_manager_secret.db_password_secret.secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  member    = "serviceAccount:${var.agents_sa_email}"
 }
 
 # 6. Add versions to the secrets

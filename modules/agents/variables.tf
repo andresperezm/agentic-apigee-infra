@@ -5,8 +5,17 @@ variable "project" {
 
 variable "agents_service_name" {
   type        = string
-  default     = "apigee-agents"
   description = "Name of the Apigee Agents service"
+}
+
+variable "agents_image_name" {
+  type        = string
+  description = "Name of the Apigee Agents image"
+}
+
+variable "agents_image_version" {
+  type        = string
+  description = "Version of the Apigee Agents image"
 }
 
 variable "agent_accessors" {

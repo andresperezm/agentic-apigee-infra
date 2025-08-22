@@ -20,7 +20,7 @@ resource "google_cloud_run_v2_service" "mcp_server" {
   template {
     service_account = var.mcp_server_sa_email
     containers {
-      image = "gcr.io/${var.project}/${var.mcp_service_name}:latest"
+      image = "gcr.io/${var.project}/${var.mcp_image_name}:${var.mcp_image_version}"
       resources {
         limits = {
           "cpu"    = "1"

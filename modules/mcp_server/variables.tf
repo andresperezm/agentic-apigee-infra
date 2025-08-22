@@ -5,8 +5,17 @@ variable "project" {
 
 variable "mcp_service_name" {
   type        = string
-  default     = "apigee-mcp-server"
-  description = "Name of the Apigee MCP server"
+  description = "Name of the Apigee MCP service"
+}
+
+variable "mcp_image_name" {
+  type        = string
+  description = "Name of the Apigee MCP image"
+}
+
+variable "mcp_image_version" {
+  type        = string
+  description = "Version of the Apigee MCP image"
 }
 
 variable "location" {
